@@ -75,7 +75,7 @@ void choixCourse(int nombreVoiture,int tri,double tempsCourse,struct voiture bag
 		int semId;
 		struct sembuf operation;
 		int nbLecteur;
-		key_t key;
+		key_t key = ftok("/dev/null", 2502);
 		struct voiture *circuit;
 		shmId = shmget(key, 20*sizeof(struct voiture), IPC_CREAT|0666);
 		if(shmId == -1){
